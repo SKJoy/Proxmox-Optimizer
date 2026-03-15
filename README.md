@@ -96,7 +96,7 @@ All configuration is managed through environment variables in the `.env` file. A
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `PVEO_RESOURCE_CPU_LIMIT_MINIMUM` | Minimum CPU limit (cores) - Proxmox VE **CPU limit** setting | `0.25` |
-| `PVEO_RESOURCE_CPU_LIMIT_MAXIMUM` | Maximum CPU limit (cores) - Proxmox VE **CPU limit** setting | `1` |
+| `PVEO_RESOURCE_CPU_LIMIT_MAXIMUM` | Maximum CPU limit (cores) - Proxmox VE **CPU limit** setting | `2` |
 | `PVEO_RESOURCE_MEMORY_MINIMUM` | Minimum memory (MB) | `16` |
 | `PVEO_RESOURCE_MEMORY_MAXIMUM` | Maximum memory (MB) | `4096` |
 | `PVEO_RESOURCE_STORAGE_MINIMUM` | Minimum storage (MB) | `2048` |
@@ -107,8 +107,8 @@ All configuration is managed through environment variables in the `.env` file. A
 | Variable | Description | Default |
 |----------|-------------|---------|
 | `PVEO_PASS_COUNT` | Number of sampling passes per optimization cycle | `5` |
-| `PVEO_PASS_INTERVAL` | Seconds between passes | `3` |
-| `PVEO_OPTIMIZE_COUNT` | Number of optimization cycles to run | `1` |
+| `PVEO_PASS_INTERVAL` | Seconds between passes | `20` |
+| `PVEO_OPTIMIZE_COUNT` | Number of optimization cycles to run | `9999` |
 | `PVEO_RECOMMENDATION_ONLY` | `true` = Only show recommendations, `false` = Apply automatically | `false` |
 
 #### 📧 SMTP Configuration
