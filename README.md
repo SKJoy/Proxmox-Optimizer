@@ -72,7 +72,7 @@ All configuration is managed through environment variables in the `.env` file. A
 | `PVEO_RESOURCE_CPU_THRESHOLD_LOW` | CPU load below this is considered low (%) | `2` |
 | `PVEO_RESOURCE_CPU_THRESHOLD_HIGH` | CPU load above this is considered high (%) | `4` |
 | `PVEO_RESOURCE_MEMORY_THRESHOLD_LOW` | Memory usage below this is considered low (%) | `50` |
-| `PVEO_RESOURCE_MEMORY_THRESHOLD_HIGH` | Memory usage above this is considered high (%) | `80` |
+| `PVEO_RESOURCE_MEMORY_THRESHOLD_HIGH` | Memory usage above this is considered high (%) | `70` |
 | `PVEO_RESOURCE_STORAGE_THRESHOLD_LOW` | Storage usage below this is considered low (%) | `33` |
 | `PVEO_RESOURCE_STORAGE_THRESHOLD_HIGH` | Storage usage above this is considered high (%) | `67` |
 
