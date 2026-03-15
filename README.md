@@ -22,6 +22,9 @@ The tool provides real-time, symbol-based progress flow display directly in the 
 ![Recommendation & Optimization](document/image/Recommendation.png)
 *Figure: Recommendation values and optimization results*
 
+![Settlement](document/image/Settlement.png)
+*Figure: System settlement after optimization (stat taken with Pulse for Proxmox)*
+
 ## 🛠️ How it works?
 
 The tool operates by collecting resource metrics from Proxmox VE and applying optimizations using Proxmox VE's resource management features:
