@@ -1,4 +1,4 @@
-# 🐛 Proxmox VE Optimizer
+# 🏋 Proxmox VE Optimizer
 
 - **Version**: `1.0.1`
 - **Type**: Command line tool
