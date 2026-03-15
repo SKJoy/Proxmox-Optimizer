@@ -9,9 +9,9 @@ foreach($Resource as $ResourceItem){ // Only if trend series is available
 	foreach($LoadTrend[$ResourceItem->ID]["Storage"] as $LoadTrendIndex => $LoadTrendItem)$ResourceLoad[$ResourceItem->ID]["Storage"] = $LoadTrendIndex == 0 ? $LoadTrendItem : ($ResourceLoad[$ResourceItem->ID]["Storage"] == $LoadTrendItem ? $LoadTrendItem : null);
 
 	$OptimizationData["Node"][$ResourceItem->Node]["Resource"][$ResourceItem->ID]["Load"]["Status"] = [
-		"CPU" => $ResourceLoad[$ResourceItem->ID]["CPU"]->Title, 
-		"Memory" => $ResourceLoad[$ResourceItem->ID]["CPU"]->Title, 
-		"Storage" => $ResourceLoad[$ResourceItem->ID]["CPU"]->Title, 
+		"CPU" => $ResourceLoad[$ResourceItem->ID]["CPU"]->Title ?? $LoadStatus->Unknown->Title, 
+		"Memory" => $ResourceLoad[$ResourceItem->ID]["CPU"]->Title ?? $LoadStatus->Unknown->Title, 
+		"Storage" => $ResourceLoad[$ResourceItem->ID]["CPU"]->Title ?? $LoadStatus->Unknown->Title, 
 	];
 }
 #endregion Detect trends if the full series matches

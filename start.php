@@ -38,6 +38,7 @@ $LoadStatus = (object)[
 	"High" => (object)["Title" => "High", "Symbol" => "🟧", ], 
 	"OK" => (object)["Title" => "OK", "Symbol" => "✅", ], 
 	"Alert" => (object)["Title" => "Alert", "Symbol" => "🟡", ], 
+	"Unknown" => (object)["Title" => "Unknown", "Symbol" => "🟡", ], 
 ];
 
 $Action = (object)[

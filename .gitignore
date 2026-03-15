@@ -21,6 +21,7 @@ TODO.md
 
 # Secrets and credentials
 document/Secret.md
+pid
 Data.json
 Package.sh
 .gitignore.local
