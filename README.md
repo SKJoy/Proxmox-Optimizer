@@ -49,6 +49,8 @@ The process flow:
 - **🧠 AI analysis**: AI-generated review in email on the optimization process using OpenAI-compatible API
 - **🖥️ Real-time display**: Real-time display of the full operation with progress indicators
 - **📋 Recommendation-only mode**: Preview recommendations without applying changes
+- **🔒 Single instance protection**: Prevents multiple instances from running simultaneously
+- **🖥️ Exit instructions**: Press `CTRL + C` to exit the tool manually
 
 ## ⚙️ Configuration
 
