@@ -1,6 +1,6 @@
 # 🐛 Proxmox VE Optimizer
 
-- **Version**: `1.0.0`
+- **Version**: `1.0.1`
 - **Type**: Command line tool
 - **Programming language**: `PHP`
 - **Platform**: `Linux`
