@@ -1,0 +1,28 @@
+# Generic folder
+backup/
+
+# Generic file
+*.code-workspace
+*.log
+*.zip
+.git*
+
+# Test folder
+temp/
+test/
+
+# Test file
+temp.*
+test.*
+
+# Project file
+.env
+TODO.md
+
+# Secrets and credentials
+document/Secret.md
+Data.json
+Package.sh
+.gitignore.local
+
+
