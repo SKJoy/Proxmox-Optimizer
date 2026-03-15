@@ -11,34 +11,37 @@ if($NotificationEmail){ // Notification email process
 	if($NotificationEmailSendTime - ($NotificationEmailSentTime ?? 0) > $NotificationEmailDelay){ //? Defer as configured
 		$NotificationEmailSentTime = $NotificationEmailSendTime; //? Keep track of last email send out time
 		
-		#region Get email content from AI
-		$OpenAIAPIModelPart = explode(":", $OpenAIAPIModel);
-		
-		$AIModel = new \S\External\OpenAI\Model(
-			$API = new \S\External\OpenAI\API(
-				$OpenAIAPIBaseURL, 
-				$OpenAIAPIKey, 
-			), 
-			$OpenAIAPIModelPart[0], 
-			$OpenAIAPIModelPart[1] ?? null, 
-			file_get_contents(__DIR__ . "/ai/prompt/system.md"), 
-		);
-		
-		$AIAnalysis = $AIModel->Chat(
-			"" . file_get_contents(__DIR__ . "/ai/prompt/user.md") . "
-		
-		```
-		" . file_get_contents($JSONFile) . "
-		```", 
-		);
-		
-		#region Sanitize AI content
-		$AIAnalysisReport = $AIAnalysis->Data->choices[0]->message->content ?? "-- NOT AVAILABLE --";
-		if(substr($AIAnalysisReport, 0, 7) == "```html")$AIAnalysisReport = substr($AIAnalysisReport, 7);
-		$AIAnalysisReportLength = strlen($AIAnalysisReport);
-		if(substr($AIAnalysisReport, $AIAnalysisReportLength - 3, 3) == "```")$AIAnalysisReport = substr($AIAnalysisReport, 0, $AIAnalysisReportLength - 3);
-		#endregion Sanitize AI content
-		#endregion Get email content from AI
+		if($OpenAIAPIBaseURL && $OpenAIAPIModel){ // Get email content from AI
+			$OpenAIAPIModelPart = explode(":", $OpenAIAPIModel);
+			
+			$AIModel = new \S\External\OpenAI\Model(
+				$API = new \S\External\OpenAI\API(
+					$OpenAIAPIBaseURL, 
+					$OpenAIAPIKey, 
+				), 
+				$OpenAIAPIModelPart[0], 
+				$OpenAIAPIModelPart[1] ?? null, 
+				file_get_contents(__DIR__ . "/ai/prompt/system.md"), 
+			);
+			
+			$AIAnalysis = $AIModel->Chat(
+				"" . file_get_contents(__DIR__ . "/ai/prompt/user.md") . "
+			
+			```
+			" . file_get_contents($JSONFile) . "
+			```", 
+			);
+			
+			#region Sanitize AI content
+			$AIAnalysisReport = $AIAnalysis->Data->choices[0]->message->content ?? "-- NOT AVAILABLE --";
+			if(substr($AIAnalysisReport, 0, 7) == "```html")$AIAnalysisReport = substr($AIAnalysisReport, 7);
+			$AIAnalysisReportLength = strlen($AIAnalysisReport);
+			if(substr($AIAnalysisReport, $AIAnalysisReportLength - 3, 3) == "```")$AIAnalysisReport = substr($AIAnalysisReport, 0, $AIAnalysisReportLength - 3);
+			#endregion Sanitize AI content
+		}
+		else{
+			$AIAnalysisReport = null;
+		}
 
 		#region Email configuration
 		$Mail = new PHPMailer(true);
