@@ -20,10 +20,11 @@ test.*
 TODO.md
 
 # Secrets and credentials
+secret/credential.md
 document/Secret.md
+
+# Secrets and credentials
+secret/
 pid
 Data.json
 Package.sh
-.gitignore.local
-
-
