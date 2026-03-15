@@ -50,7 +50,6 @@ The process flow:
 - **🖥️ Real-time display**: Real-time display of the full operation with progress indicators
 - **📋 Recommendation-only mode**: Preview recommendations without applying changes
 - **🔒 Single instance protection**: Prevents multiple instances from running simultaneously
-- **🖥️ Exit instructions**: Press `CTRL + C` to exit the tool manually
 
 ## ⚙️ Configuration
 
@@ -219,6 +218,8 @@ cp example.env .env
 # ▶️ Run the optimizer
 php start.php
 ```
+
+**💡 Note**: Press `CTRL + C` to manually exit the tool at any time.
 
 ## 🔧 External Libraries
 
